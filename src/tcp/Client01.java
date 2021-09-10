@@ -2,6 +2,7 @@ package tcp;
 
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client01 {
 
@@ -12,7 +13,9 @@ public class Client01 {
 		
 		//(4) stream : 데이터를 주고 받는 통로
 		OutputStream out = sock.getOutputStream();
-		out.write(100);	// (데이터), 서버로 전송하는 데이터
+		System.out.print("수 입력 : ");
+		int num = new Scanner(System.in).nextInt();
+		out.write(num);	// (데이터), 서버로 전송하는 데이터
 		out.close();
 		sock.close();
 		
